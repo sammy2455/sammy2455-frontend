@@ -6,21 +6,6 @@ export default function Header () {
 
     const router = useRouter();
 
-    const routes = [
-        {
-            "name": "About",
-            "route": "/home",
-        },
-        {
-            "name": "Projects",
-            "route": "/projects",
-        },
-        {
-            "name": "Resume",
-            "route": "/resume",
-        }
-    ];
-
     return (
         <div className="card-body">
             <Link href="/">
@@ -30,11 +15,13 @@ export default function Header () {
             </Link>
             <h3 className="card-title mb-2">Sammy</h3>
             <nav className="nav text-dark">
-                {routes.map((route) =>
-                    <Link href={route.route} key={route.name}>
-                        <a className={`nav-link p-0 py-2 pe-3 ${(router.pathname.includes(route.route))? 'text-dark' : 'text-muted'}`} aria-current="page">{route.name}</a>
-                    </Link>
-                )}
+                <Link href={`/home`} key={`About`}>
+                    <a className={`nav-link p-0 py-2 pe-3 ${(router.pathname.includes(`/home`))? 'text-dark' : 'text-muted'}`} aria-current="page">{`About`}</a>
+                </Link>
+                    <Link href={`/projects`} key={`Projects`}>
+                    <a className={`nav-link p-0 py-2 pe-3 ${(router.pathname.includes(`/projects`))? 'text-dark' : 'text-muted'}`} aria-current="page">{`Projects`}</a>
+                </Link>
+                <a className="nav-link p-0 py-2 pe-3 text-muted" target="_blank" href="https://drive.google.com/file/d/1J35IDNbDB4xyFyIvfQYizGn9Rkcz8Anc/view?usp=share_link" rel="noopener noreferrer">{`Resume`}</a>
             </nav>
         </div>
     )
