@@ -21,7 +21,7 @@ export default function Header () {
                     <Link href={`/projects`} key={`Projects`}>
                     <a className={`nav-link p-0 py-2 pe-3 ${(router.pathname.includes(`/projects`))? 'text-dark' : 'text-muted'}`} aria-current="page">{`Projects`}</a>
                 </Link>
-                <a className="nav-link p-0 py-2 pe-3 text-muted" target="_blank" href="https://drive.google.com/file/d/1J35IDNbDB4xyFyIvfQYizGn9Rkcz8Anc/view?usp=share_link" rel="noopener noreferrer">{`Resume`}</a>
+                <a className="nav-link p-0 py-2 pe-3 text-muted" href="#" rel="noopener noreferrer">{`Resume`}</a>
             </nav>
         </div>
     )
